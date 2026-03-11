@@ -1,0 +1,152 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background-color: #1e1b4b;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.cabecalho h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cabecalho p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Indicador de largura */
+.info-largura {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-bottom: 2px solid #c7d2fe;
+}
+
+/* Container dos blocos */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Bloco individual */
+.bloco {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid var(--cor-bloco);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.bloco:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.bloco-numero {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--cor-bloco);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloco-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.bloco-descricao {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* Rodapé */
+.rodape {
+  background-color: #1e1b4b;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* =====================
+   MEDIA QUERIES
+   ===================== */
+
+/* Mobile pequeno: < 480px → 1 coluna */
+@media (max-width: 479px) {
+  .bloco {
+    width: 100%;
+  }
+
+  .cabecalho h1 {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* Mobile: 480px a 767px → 2 colunas */
+@media (min-width: 480px) and (max-width: 767px) {
+  .bloco {
+    width: calc(50% - 0.625rem);
+  }
+
+  .cabecalho h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablet: 768px a 1023px → 3 colunas */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bloco {
+    width: calc(33.333% - 0.84rem);
+  }
+}
+
+/* Desktop: 1024px ou mais → 6 colunas (todos lado a lado) */
+@media (min-width: 1024px) {
+  .bloco {
+    width: calc(16.666% - 1.05rem);
+  }
+}
